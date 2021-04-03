@@ -21,6 +21,11 @@ cd react_flask_docker_app
 
 Install Node.js 14.16: https://nodejs.org/en/
 
+Create .env
+```.env
+REACT_APP_API_URL=http://localhost:8080/api
+```
+
 ```shell Windows
 npx create-react-app frontend
 cd frontend
