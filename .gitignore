@@ -1,3 +1,10 @@
+# VSCode environment
+.vscode/
+
+# Python virtual envronment
 venv/
 
-.vscode/
+# Python compiled files
+*.pyc
+*.Python
+*/__pycache__/

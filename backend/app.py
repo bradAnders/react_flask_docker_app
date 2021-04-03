@@ -21,7 +21,7 @@ def get_topics():
 @app.route('/api/submit_question', methods=["POST"])
 def submit_qustion():
     question = json.loads(request.data)["question"]
-    return {"answer": f"Your q was {len(question)} chars long"}
+    return {"answer": f"Your Q was {len(question)} chars long"}
 
 
 if __name__ == '__main__':

@@ -15,14 +15,13 @@ let App = () => {
     });
   }, []);
 
-  let handleSubmit = (event) => {
-    event.preventDefault();
+  React.useEffect(() => {
     axios.post(`${api_host}/submit_question`, { question }).then(({ data }) => {
       if (data) {
         setAnswer(data.answer);
       }
     });
-  };
+  }, [question]);
 
   return (
     <div className="App">
@@ -33,21 +32,18 @@ let App = () => {
             <li key={topic}>{topic}</li>
           ))}
         </ul>
-        <form onSubmit={handleSubmit}>
-          <label>
-            Question:
-            <input
-              type="text"
-              value={question}
-              onChange={({ target }) => {
-                if (target) {
-                  setQuestion(target.value);
-                }
-              }}
-            />
-          </label>
-          <input type="Submit" />
-        </form>
+        <label>
+          Question:
+          <input
+            type="text"
+            value={question}
+            onChange={({ target }) => {
+              if (target) {
+                setQuestion(target.value);
+              }
+            }}
+          />
+        </label>
         <h1>Answer: {answer}</h1>
       </header>
     </div>

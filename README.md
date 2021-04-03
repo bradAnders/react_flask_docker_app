@@ -21,16 +21,22 @@ cd react_flask_docker_app
 
 Install Node.js 14.16: https://nodejs.org/en/
 
-Create .env
-```.env
-REACT_APP_API_URL=http://localhost:8080/api
-```
-
 Create a new React aapp
 
 ```shell Windows
 npx create-react-app frontend
 cd frontend
+```
+
+Create .env in frontend/
+```.env
+REACT_APP_API_URL=http://localhost:8080/api
+```
+
+Install HTTP module [Axios](https://www.npmjs.com/package/axios) using *--save* to add to npm dependencies for this project
+
+```shell
+npm install --save axios
 ```
 Modify App.js
 
@@ -100,25 +106,25 @@ Start the app
 npm start
 ```
 
-Install HTTP module [Axios](https://www.npmjs.com/package/axios) using *--save* to add to npm dependencies for this project
-
-```shell
-npm install --save axios
-```
-
 ## Backend
 
 ### Setup
 
 Install Python 3.9 https://www.python.org/downloads/windows/
 
-Setup a virtual environment, using the "-m"
+Setup and activate virtual environment
 
 ```shell
+cd ..
 Set-ExecutionPolicy Unrestricted CurrentUser
 python -m pip install --upgrade pip
 python -m venv venv
 .\venv\Scripts\activate
+```
+
+Create python project backend/
+
+```shell
 mkdir backend
 cd backend
 pip install flask
@@ -126,7 +132,7 @@ pip install flask-cors
 pip freeze > requirements.txt
 ```
 
-Create app.py
+Create app.py in backend/
 
 ```python
 import json
