@@ -26,6 +26,8 @@ Create .env
 REACT_APP_API_URL=http://localhost:8080/api
 ```
 
+Create a new React aapp
+
 ```shell Windows
 npx create-react-app frontend
 cd frontend
@@ -124,7 +126,7 @@ pip install flask-cors
 pip freeze > requirements.txt
 ```
 
-Modify app.py
+Create app.py
 
 ```python
 import json
